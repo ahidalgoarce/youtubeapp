@@ -1,0 +1,83 @@
+<div class="container-delete-guest" fxLayout fxLayout.xs="column" fxLayoutAlign="center">
+  <div fxFlex="40%">
+    <form [formGroup]="formGuest" (ngSubmit)="onSubmit()">
+      <h1>TubeKids</h1>
+      <h4>Agregar nuevo invitad@</h4>
+      <!-- fullname field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre completo</mat-label>
+        <input formControlName="fullname" type="text" required matInput placeholder="Ingrese su nombre" [ngClass]="{ 'is-invalid': submitted && formControls.fullname.errors }">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-error *ngIf="(submitted && formControls.fullname.errors) && formControls.fullname.errors.required">
+          Nombre completo requerido
+        </mat-error>
+      </mat-form-field>
+      <div fxLayout fxLayout.xs="column">
+        <div fxFlex="30%">
+          <!-- age field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Edad</mat-label>
+            <input formControlName="age" type="text" required matInput placeholder="Ingrese la edad" [ngClass]="{ 'is-invalid': submitted && formControls.age.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="(submitted && formControls.age.errors) && (formControls.age.errors.required)">
+              Edad requerido
+            </mat-error>
+            <mat-error *ngIf="(submitted && formControls.age.errors) && (formControls.age.errors.max)">
+              Rando de edad no permitido
+            </mat-error>
+            <mat-error *ngIf="(submitted && formControls.age.errors) && (formControls.age.errors.min)">
+              Rando de edad no permitido
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="70%">
+          <!-- username field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <input formControlName="username" type="text" required matInput placeholder="Ingrese el usuairo" [ngClass]="{ 'is-invalid': submitted && formControls.username.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="(submitted && formControls.username.errors) && formControls.username.errors.required">
+              Usuario requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout fxLayout.xs="column">
+        <div fxFlex="50%">
+          <!-- pin field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Pin</mat-label>
+            <input formControlName="pin" type="password" required matInput placeholder="Ingrese el pin" [ngClass]="{ 'is-invalid': submitted && formControls.pin.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="submitted && pwConfirm.errors || pin.invalid && (pin.dirty || pin.touched)">
+              Pin requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50%">
+          <!-- pinconfirm field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Confimación</mat-label>
+            <input formControlName="pinConfirm" type="password" required matInput placeholder="Ingrese el confirmación" [ngClass]="{ 'is-invalid': submitted && formControls.pinConfirm.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="(submitted && pwConfirm.errors || (submitted &&  pwConfirm.invalid && (pwConfirm.dirty || pwConfirm.touched))) && pwConfirm.errors['required']">
+              Confirmación requerida
+            </mat-error>
+            <mat-error *ngIf="(submitted && pwConfirm.errors || (submitted &&  pwConfirm.invalid && (pwConfirm.dirty || pwConfirm.touched))) && pwConfirm.errors['compare']">
+              No es igul a la pin
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- buttom  -->
+      <div class="container-buttom">
+        <button mat-stroked-button color="primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+  <div class="details" fxFlex="40%">
+    <img src="https://i.imgur.com/42cBdg2.gif" alt="">
+    <h5>Proyecto Software Libre</h5>
+    <h1>UTN Sede San Carlos</h1>
+  </div>
+</div>

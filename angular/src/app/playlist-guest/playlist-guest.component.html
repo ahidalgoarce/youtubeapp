@@ -1,0 +1,20 @@
+<div class="container-search" fxLayout fxLayout.xs="column" fxLayoutAlign="center">
+  <div fxFlex="50%">
+    <!-- serch button -->
+    <mat-form-field>
+      <input matInput (keydown)="applyFilter($event, $event.target.value)" placeholder="Ingrese el nombre del video, luego precione enter">
+    </mat-form-field>
+  </div>
+</div>
+<div class="video-container" fxLayout="row wrap" fxLayoutAlign.xs="center center">
+  <div fxFlex="25%" fxFlex.xs="100%" *ngFor="let item of YTsnippet; let i = index">
+    <div class="body-img">
+      <a routerLink="/ver/{{item._id}}">
+        <img [src]='item.data.snippet.thumbnails.high.url' class="img-fluid" width="640" height="360">     
+      </a>
+    </div>
+    <div class="footer-img">
+      <p class="text-center">{{item.nameVideo.length > 30?item.nameVideo.substring(0,30)+"....":item.nameVideo}}</p>
+    </div>
+  </div>
+</div>

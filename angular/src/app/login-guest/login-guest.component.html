@@ -1,0 +1,44 @@
+<div class="container-frm-guest" fxLayout fxLayout.xs="column" fxLayoutAlign="center">
+  <div fxFlex="30%">
+    <form [formGroup]="guestForm" (ngSubmit)="loginGuest()">
+      <h1>LOGIN USUARIO</h1>
+      <div ffxLayout fxLayout.xs="column">
+        <div fxFlex="100%">
+          <!-- email field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <input formControlName="username" type="text" required matInput placeholder="Ingrese su usuario" [ngClass]="{ 'is-invalid': submitted && formControls.username.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error  *ngIf="(submitted && formControls.username.errors) && (formControls.username.errors.required)">
+              Usuario requerido
+            </mat-error> 
+          </mat-form-field>
+        </div>
+      </div>
+      <div ffxLayout fxLayout.xs="column">
+        <div fxFlex="100%">
+          <!-- passoword field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Pin</mat-label>
+            <input formControlName="pin" type="password" required matInput placeholder="Ingrese su pin" [ngClass]="{ 'is-invalid': submitted && formControls.pin.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error  *ngIf="(submitted && formControls.pin.errors) && (formControls.pin.errors.required)">
+              Contraseña requerido
+            </mat-error> 
+            <mat-error  *ngIf="(submitted && formControls.pin.errors) && (formControls.pin.errors.minLength)">
+              Contraseña muy corta
+            </mat-error> 
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="container-buttom">
+        <button mat-stroked-button color="primary">Ingresar</button>
+      </div>
+    </form>
+  </div>
+  <div class="details" fxFlex="40%">
+    <img src="../assets/login.gif" alt="">
+    <h5>Proyecto Software Libre</h5>
+    <h1>UTN Sede San Carlos</h1>
+  </div>
+</div>

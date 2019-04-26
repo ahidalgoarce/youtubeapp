@@ -1,0 +1,77 @@
+<div class="container-delete-guest" fxLayout fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+  <div fxFlex="40%">
+    <form [formGroup]="formGuest">
+      <h1>TubeKids</h1>
+      <h4>¿Realmente deseea eliminar este invitado?</h4>
+      <!-- fullname field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre completo</mat-label>
+        <input formControlName="fullname" type="text" required matInput placeholder="Ingrese su nombre" [ngClass]="{ 'is-invalid': submitted && formControls.fullname.errors }">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-error *ngIf="(submitted && formControls.fullname.errors) && formControls.fullname.errors.required">
+          Nombre requerido
+        </mat-error>
+      </mat-form-field>
+      <div fxLayout fxLayout.xs="column">
+        <div fxFlex="30%">
+          <!-- age field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Edad</mat-label>
+            <input formControlName="age" type="text" required matInput placeholder="Ingrese la edad" [ngClass]="{ 'is-invalid': submitted && formControls.age.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <div *ngIf="submitted && formControls.age.errors" class="invalid-feedback">
+              <div *ngIf="formControls.age.errors.required">Edad requerida</div>
+            </div>
+          </mat-form-field>
+        </div>
+        <div fxFlex="70%">
+          <!-- username field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <input formControlName="username" type="text" required matInput placeholder="Ingrese el usuairo" [ngClass]="{ 'is-invalid': submitted && formControls.username.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <div *ngIf="submitted && formControls.username.errors" class="invalid-feedback">
+              <div *ngIf="formControls.username.errors.required">Fecha de nacimiento es requerido</div>
+              <div *ngIf="formControls.username.errors.pattern">Fecha de nacimiento es requerido</div>
+              <!-- <div *ngIf="f.birthDate.errors.pattern">Formato invalido</div> -->
+            </div>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout fxLayout.xs="column">
+        <div fxFlex="50%">
+          <!-- pin field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Pin</mat-label>
+            <input formControlName="pin" type="password" required matInput placeholder="Ingrese el pin" [ngClass]="{ 'is-invalid': submitted && formControls.pin.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="submitted && pwConfirm.errors || pin.invalid && (pin.dirty || pin.touched)">
+              Pin requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50%">
+          <!-- pinconfirm field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Confimación</mat-label>
+            <input formControlName="pinConfirm" type="password" required matInput placeholder="Ingrese el confirmación" [ngClass]="{ 'is-invalid': submitted && formControls.pinConfirm.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="(submitted && pinConfirm.errors || (submitted &&  pinConfirm.invalid && (pinConfirm.dirty || pinConfirm.touched))) && pinConfirm.errors['required']">
+              Confrimación requerida
+              <!-- <div *ngIf="pwConfirm.errors['compare']">No son iguales</div> -->
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="container-buttom">
+        <!-- buttom  -->
+        <button mat-stroked-button color="primary" (click)="eliminar()">Eliminar</button>
+      </div>
+    </form>
+  </div>
+  <div class="details" fxFlex="40%">
+    <img src="https://i.imgur.com/42cBdg2.gif" alt="">
+    <h5>Proyecto Software Libre</h5>
+    <h1>UTN Sede San Carlos</h1>
+  </div>
+</div>

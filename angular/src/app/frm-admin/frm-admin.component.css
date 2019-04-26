@@ -1,0 +1,74 @@
+ .container-frm-user {
+   margin-top: 0.5%;
+ }
+
+ .container-frm-user>div>form {
+   margin-top: 1%;
+   padding-top: 1%;
+   -webkit-box-shadow: 1px 4px 8px 3px rgba(0, 0, 0, 0.66);
+   -moz-box-shadow: 1px 4px 8px 3px rgba(0, 0, 0, 0.66);
+   box-shadow: 1px 4px 8px 3px rgba(0, 0, 0, 0.66);
+   border-radius: 10px 10px 10px 10px;
+   -moz-border-radius: 10px 10px 10px 10px;
+   -webkit-border-radius: 10px 10px 10px 10px;
+   border: 0px solid #000000;
+ }
+
+ .container-frm-user>div>form div mat-form-field {
+   max-width: none !important;
+   width: 95%;
+   padding-left: 2.5%;
+   padding-right: 2.5%;
+ }
+
+ .container-frm-user>div>form mat-form-field {
+   max-width: none !important;
+   width: 97%;
+   padding-left: 1.5%;
+   padding-right: 1.5%;
+ }
+
+ .container-buttom {
+   padding: 0;
+   margin: 0;
+   padding-bottom: 20px;
+ }
+
+ .container-buttom a {
+   text-decoration: none;
+   color:#000000;
+   text-align: left;
+ }
+
+ .container-buttom .container-link-login {
+   padding-top: 10px;
+   padding-left: 1.5%;
+   text-align: left;
+ }
+
+ .container-buttom .container-btn-save {
+   text-align: center;
+ }
+
+ .container-frm-user .details {
+   text-align: center;
+ }
+
+ .container-frm-user .details h1,
+ .details h5 {
+   padding: 0;
+   margin: 0;
+ }
+
+ .container-frm-user img {
+   text-align: center;
+   max-width: none;
+   width: 100%;
+   max-height: none;
+   height: 80%;
+ }
+
+ .container-frm-user div form h1,
+ .container-frm-user div form h4 {
+   padding-left: 1%;
+ }

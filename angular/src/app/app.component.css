@@ -1,0 +1,58 @@
+.tubekids-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .tubekids-toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+mat-sidenav {
+  width: 250px;
+  min-width: 250px;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.example-is-mobile .sidenav-container {
+  flex: 1 0 auto;
+}
+
+mat-subheader {
+  padding-bottom: 0px !important;
+}
+
+.tubekids-container h3 {
+  height: 2px;
+}
+
+.username {
+  text-align: center;
+}
+
+.username:hover {
+  cursor: pointer;
+  color: blueviolet;
+}
+
+.name-app:hover {
+  color: blueviolet;
+  cursor: pointer;
+}
+
+mat-sidenav {
+  background-color: #EDEDEE;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}

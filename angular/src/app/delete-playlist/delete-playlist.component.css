@@ -1,0 +1,45 @@
+.container-delete-playlist h1,
+.container-delete-playlist h4 {
+  padding-left: 1%;
+}
+
+.container-delete-playlist {
+  padding-top: 1%;
+}
+
+.container-delete-playlist #videoContainer {
+  height: 300px;
+}
+
+.container-delete-playlist .main-container {
+  margin-top: 1%;
+  -webkit-box-shadow: 1px 4px 8px 3px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: 1px 4px 8px 3px rgba(0, 0, 0, 0.66);
+  box-shadow: 1px 4px 8px 3px rgba(0, 0, 0, 0.66);
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+}
+
+.container-delete-playlist .details h1,
+.details h5 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.container-delete-playlist img {
+  text-align: center;
+  max-width: none;
+  width: 90%;
+  max-height: none;
+  height: auto;
+}
+
+.container-buttom {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 20px;
+  text-align: center;
+}

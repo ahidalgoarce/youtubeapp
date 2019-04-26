@@ -1,0 +1,109 @@
+<div class="container-frm-user" fxLayout fxLayout.xs="column" fxLayoutAlign="center">
+  <div fxFlex="50%">
+    <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
+      <h1>TubeKids</h1>
+      <h4>Actualiza tu perfil cuando lo quieras ...</h4>
+      <!-- name field -->
+      <div ffxLayout fxLayout.xs="column">
+        <div fxFlex="40%">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="name" type="text" required matInput placeholder="Ingrese su nombre" [ngClass]="{ 'is-invalid': submitted && formControls.name.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="(submitted && formControls.name.errors) && formControls.name.errors.required">
+              Nombre requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="60%">
+          <!-- surnames field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Apellidos</mat-label>
+            <input formControlName="surnames" type="text" required matInput placeholder="Ingrese sus Apellidos" [ngClass]="{ 'is-invalid': submitted && formControls.surnames.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <div *ngIf="submitted && formControls.surnames.errors" class="invalid-feedback">
+              <div *ngIf="formControls.surnames.errors.required">Apellidos es requerido</div>
+            </div>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout fxLayout.xs="column">
+        <div fxFlex="50%">
+          <!-- country field -->
+          <mat-form-field appearance="outline">
+            <mat-label>País</mat-label>
+            <input formControlName="country" type="text" required matInput placeholder="Ingrese su país" [ngClass]="{ 'is-invalid': submitted && formControls.country.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <div *ngIf="submitted && formControls.country.errors" class="invalid-feedback">
+              <div *ngIf="formControls.country.errors.required">País es requerido</div>
+            </div>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50%">
+          <!-- birddate field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Fecha de nacimiento</mat-label>
+            <input formControlName="birthDate" type="date" required matInput placeholder="Ingrese su fecha de nacimiento" [ngClass]="{ 'is-invalid': submitted && formControls.birthDate.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <div *ngIf="submitted && formControls.birthDate.errors" class="invalid-feedback">
+              <div *ngIf="formControls.birthDate.errors.required">Fecha de nacimiento es requerido</div>
+              <div *ngIf="formControls.birthDate.errors.pattern">Fecha de nacimiento es requerido</div>
+              <!-- <div *ngIf="f.birthDate.errors.pattern">Formato invalido</div> -->
+            </div>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- email field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" type="email" required matInput placeholder="Ingrese su email" [ngClass]="{ 'is-invalid': submitted && formControls.email.errors }">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <div *ngIf="submitted && formControls.email.errors" class="invalid-feedback">
+          <div *ngIf="formControls.email.errors.required">Email es requerido</div>
+          <div *ngIf="formControls.email.errors.email">Ingresa un email valido</div>
+        </div>
+      </mat-form-field>
+      <div fxLayout fxLayout.xs="column">
+        <div fxFlex="50%">
+          <!-- passoword field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input formControlName="password" type="password" required matInput placeholder="Ingrese su nombre" [ngClass]="{ 'is-invalid': submitted && formControls.password.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="submitted && pwConfirm.errors || password.invalid && (password.dirty || password.touched)">
+              Contraseña es requerida
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50%">
+          <!-- confirm password field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Confimación</mat-label>
+            <input formControlName="passwordConfirm" type="password" required matInput placeholder="Ingrese su nombre" [ngClass]="{ 'is-invalid': submitted && formControls.passwordConfirm.errors }">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="(submitted && pwConfirm.errors || (submitted &&  pwConfirm.invalid && (pwConfirm.dirty || pwConfirm.touched))) && pwConfirm.errors['required']">
+              Confrimación requerida
+              <!-- <div *ngIf="pwConfirm.errors['compare']">No son iguales</div> -->
+            </mat-error>
+            <!-- buttom  -->
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="container-buttom">
+        <div fxLayout fxLayout.md="column">
+          <div class="container-link-login" fxFlex="50%">
+            <a href="">Acceder a tu cuenta en su lugar</a>
+          </div>
+          <div class="container-btn-save" fxFlex="50%">
+            <button mat-stroked-button color="primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+    <div class="details" fxFlex="40%">
+      <img src="https://i.imgur.com/42cBdg2.gif" alt="">
+      <h5>Proyecto Software Libre</h5>
+      <h1>UTN Sede San Carlos</h1>
+    </div>
+  </div>

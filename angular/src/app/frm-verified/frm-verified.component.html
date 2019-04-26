@@ -1,0 +1,51 @@
+<div class="container-frm-admin" fxLayout fxLayout.xs="column" fxLayoutAlign="center">
+    <div fxFlex="30%">
+      <form [formGroup]="userForm" (ngSubmit)="loginUser()">
+        <h1>VERIFICAR USUARIO</h1>
+        <div ffxLayout fxLayout.xs="column">
+          <div fxFlex="100%">
+            <!-- email field -->
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input formControlName="email" type="email" required matInput placeholder="Ingrese su email" [ngClass]="{ 'is-invalid': submitted && formControls.email.errors }">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <div *ngIf="submitted && formControls.email.errors" class="invalid-feedback">
+                <div *ngIf="formControls.email.errors.required">Email requerido</div>
+                <div *ngIf="formControls.email.errors.pattern">Email inválido</div>
+              </div>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout fxLayout.xs="column">
+          <div fxFlex="100%">
+            <!-- passoword field -->
+            <mat-form-field appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input formControlName="password" type="password" required matInput placeholder="Ingrese su nombre" [ngClass]="{ 'is-invalid': submitted && formControls.password.errors }">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <div *ngIf="submitted && formControls.password.errors" class="invalid-feedback">
+                <div *ngIf="formControls.password.errors.required">Contraseña requerida</div>
+                <div *ngIf="formControls.password.errors.minlength">Contraseña muy corta</div>
+              </div>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="container-buttom">
+          <div fxLayout fxLayout.md="column">
+            <div class="container-link-login" fxFlex="50%">
+              <a href="">Registrar en TubeKids</a>
+            </div>
+            <div class="container-btn-save" fxFlex="50%">
+              <button mat-stroked-button color="primary">Ingresar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="details" fxFlex="40%">
+      <img src="../assets/login.gif" alt="">
+      <h5>Proyecto Software Libre</h5>
+      <h1>UTN Sede San Carlos</h1>
+    </div>
+  </div>
+  

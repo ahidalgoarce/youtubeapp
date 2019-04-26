@@ -1,0 +1,48 @@
+<div class="container-frm-user" fxLayout fxLayout.xs="column" fxLayoutAlign="center">
+  <div fxFlex="50%">
+    <form [formGroup]="videoForm" (ngSubmit)="onSubmit()">
+      <h1>TubeKids</h1>
+      <h4>Agrega un nuevo video a la lista</h4>
+      <!-- name field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Link</mat-label>
+        <input formControlName="url" type="text" required matInput placeholder="Ingrese el link del video" [ngClass]="{ 'is-invalid': submitted && formControls.url.errors }">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-error *ngIf="(submitted && formControls.url.errors) && formControls.url.errors.required">
+          Nombre requerido
+        </mat-error>
+      </mat-form-field>
+       <!-- name field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input formControlName="name" type="text" required matInput placeholder="Ingrese el nombre" [ngClass]="{ 'is-invalid': submitted && formControls.name.errors }">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-error *ngIf="(submitted && formControls.name.errors) && formControls.name.errors.required">
+          Nombre requerido
+        </mat-error>
+      </mat-form-field>
+        <div fxLayout fxLayout.md="column">
+          <div class="container-link-login" fxFlex="50%">
+            <!-- guest select field -->
+            <mat-form-field>
+              <mat-select formControlName="guest" placeholder="Seleccione el invitado">
+                <mat-option *ngFor="let guest of guests" [value]="guest._id">
+                  {{guest.fullname}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="container-btn-save" fxFlex="50%">
+              <div class="container-buttom">
+            <button mat-stroked-button color="primary">Guardar</button>
+          </div>
+          </div>
+        </div>
+    </form>
+  </div>
+  <div class="details" fxFlex="40%">
+    <img src="../assets/frm-playlist.gif" alt="">
+    <h5>Proyecto Software Libre</h5>
+    <h1>UTN Sede San Carlos</h1>
+  </div>
+</div>

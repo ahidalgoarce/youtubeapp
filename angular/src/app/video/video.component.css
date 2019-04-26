@@ -1,0 +1,18 @@
+.main-container {
+  margin-top: 25px;
+}
+
+.main-container h1 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  background-color: cornsilk;
+}
+
+#footer-video {
+  background-color: cornsilk;
+}
+
+.video-contaner {
+  height: 500px;
+}

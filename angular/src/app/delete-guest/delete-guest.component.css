@@ -1,0 +1,56 @@
+.container-delete-guest {
+  margin-top: 4%;
+}
+
+.container-delete-guest>div>form {
+  margin-top: 1%;
+  padding-top: 1%;
+  -webkit-box-shadow: 1px 4px 8px 3px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: 1px 4px 8px 3px rgba(0, 0, 0, 0.66);
+  box-shadow: 1px 4px 8px 3px rgba(0, 0, 0, 0.66);
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+}
+
+.container-delete-guest>div>form div mat-form-field {
+  max-width: none !important;
+  width: 95%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.container-delete-guest>div>form mat-form-field {
+  max-width: none !important;
+  width: 97%;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+}
+
+.container-buttom {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.container-delete-guest .details h1,
+.details h5 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.container-delete-guest img {
+  text-align: center;
+  max-width: none;
+  width: 90%;
+  max-height: none;
+  height: auto;
+}
+
+.container-delete-guest div form h1,
+.container-delete-guest div form h4 {
+  padding-left: 1%;
+}
